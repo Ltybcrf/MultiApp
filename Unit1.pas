@@ -18,7 +18,11 @@ type
     IdHTTP1: TIdHTTP;
     IdAntiFreeze1: TIdAntiFreeze;
     StatusBar1: TStatusBar;
+    TabSheet2: TTabSheet;
+    Edit2: TEdit;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,12 +36,33 @@ implementation
 
 {$R *.dfm}
 
+function GetExternalIP:String;
+var IdHttp1:TIdHttp;
+    s:String;
+begin
+ s:='0.0.0.0';
+ IdHttp1:=TIdHttp.Create(nil);
+ try
+ s:= IdHttp1.Get('http://checkip.dyndns.org');
+ s:=copy(s,Pos(':',s)+2,20);
+ s:=copy(s,1,Pos('<',s)-1);
+ finally
+ FreeAndNil(IdHttp1);
+ end;
+ Result:=s;
+end;
+
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
 StatusBar1.SimpleText:='Please Wait';
 RichEdit1.Text:=idhttp1.Get('http://api.hackertarget.com/whois/?q=' + Edit1.Text);
 StatusBar1.SimpleText:='Done';
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+Edit2.Text:=GetExternalIP;
 end;
 
 end.

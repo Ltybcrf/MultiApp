@@ -3160,10 +3160,9 @@ object Form1: TForm1
     Top = 0
     Width = 635
     Height = 336
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 337
     object TabSheet1: TTabSheet
       AlignWithMargins = True
       Caption = 'Whois'
@@ -3202,6 +3201,27 @@ object Form1: TForm1
         ReadOnly = True
         TabOrder = 2
         Zoom = 100
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Get IP'
+      ImageIndex = 1
+      object Edit2: TEdit
+        Left = 216
+        Top = 3
+        Width = 145
+        Height = 21
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 240
+        Top = 30
+        Width = 105
+        Height = 25
+        Caption = 'Get'
+        TabOrder = 1
+        OnClick = Button2Click
       end
     end
   end
