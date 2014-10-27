@@ -2,9 +2,11 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'MultiApp'
-  ClientHeight = 337
+  ClientHeight = 355
   ClientWidth = 635
   Color = clBtnFace
+  Constraints.MinHeight = 337
+  Constraints.MinWidth = 635
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -3153,4 +3155,86 @@ object Form1: TForm1
   Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 336
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 0
+    ExplicitHeight = 337
+    object TabSheet1: TTabSheet
+      AlignWithMargins = True
+      Caption = 'Whois'
+      ExplicitHeight = 303
+      object Edit1: TEdit
+        Left = 96
+        Top = 3
+        Width = 153
+        Height = 21
+        TabOrder = 0
+        Text = 'WebSite or IP'
+      end
+      object Button1: TButton
+        Left = 3
+        Top = 0
+        Width = 75
+        Height = 25
+        Caption = 'Get'
+        TabOrder = 1
+        OnClick = Button1Click
+      end
+      object RichEdit1: TRichEdit
+        Left = 0
+        Top = 31
+        Width = 621
+        Height = 271
+        Align = alCustom
+        Alignment = taCenter
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+        Zoom = 100
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 336
+    Width = 635
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+    ExplicitLeft = 328
+    ExplicitTop = 176
+    ExplicitWidth = 0
+  end
+  object IdHTTP1: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 32
+    Top = 112
+  end
+  object IdAntiFreeze1: TIdAntiFreeze
+    Left = 64
+    Top = 112
+  end
 end
