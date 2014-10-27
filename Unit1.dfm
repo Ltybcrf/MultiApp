@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'MultiApp'
-  ClientHeight = 355
-  ClientWidth = 635
+  ClientHeight = 299
+  ClientWidth = 619
   Color = clBtnFace
   Constraints.MinHeight = 337
   Constraints.MinWidth = 635
@@ -3158,14 +3158,18 @@ object Form1: TForm1
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 635
-    Height = 336
-    ActivePage = TabSheet2
+    Width = 619
+    Height = 280
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 635
+    ExplicitHeight = 336
     object TabSheet1: TTabSheet
       AlignWithMargins = True
       Caption = 'Whois'
+      OnShow = TabSheet1Show
+      ExplicitWidth = 621
       ExplicitHeight = 303
       object Edit1: TEdit
         Left = 96
@@ -3187,8 +3191,8 @@ object Form1: TForm1
       object RichEdit1: TRichEdit
         Left = 0
         Top = 31
-        Width = 621
-        Height = 271
+        Width = 605
+        Height = 215
         Align = alCustom
         Alignment = taCenter
         Anchors = [akLeft, akTop, akRight, akBottom]
@@ -3201,13 +3205,18 @@ object Form1: TForm1
         ReadOnly = True
         TabOrder = 2
         Zoom = 100
+        ExplicitWidth = 621
+        ExplicitHeight = 271
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Get IP'
       ImageIndex = 1
+      OnShow = TabSheet2Show
+      ExplicitWidth = 627
+      ExplicitHeight = 308
       object Edit2: TEdit
-        Left = 216
+        Left = 16
         Top = 3
         Width = 145
         Height = 21
@@ -3215,7 +3224,7 @@ object Form1: TForm1
         TabOrder = 0
       end
       object Button2: TButton
-        Left = 240
+        Left = 32
         Top = 30
         Width = 105
         Height = 25
@@ -3227,8 +3236,8 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 336
-    Width = 635
+    Top = 280
+    Width = 619
     Height = 19
     Panels = <>
     SimplePanel = True
