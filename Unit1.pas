@@ -38,23 +38,6 @@ implementation
 
 {$R *.dfm}
 
-function GetExternalIP:String;
-var IdHttp1:TIdHttp;
-    s:String;
-begin
- s:='0.0.0.0';
- IdHttp1:=TIdHttp.Create(nil);
- try
- s:= IdHttp1.Get('http://checkip.dyndns.org');
- s:=copy(s,Pos(':',s)+2,20);
- s:=copy(s,1,Pos('<',s)-1);
- finally
- FreeAndNil(IdHttp1);
- end;
- Result:=s;
-end;
-
-
 procedure TForm1.Button1Click(Sender: TObject);
 begin
 StatusBar1.SimpleText:='Please Wait';
@@ -65,7 +48,7 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
 StatusBar1.SimpleText:='Please Wait';
-Edit2.Text:=GetExternalIP;
+Edit2.Text:=idhttp1.Get('http://ip.telize.com/');
 StatusBar1.SimpleText:='Done';
 end;
 

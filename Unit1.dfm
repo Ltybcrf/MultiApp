@@ -3163,14 +3163,10 @@ object Form1: TForm1
     ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 635
-    ExplicitHeight = 336
     object TabSheet1: TTabSheet
       AlignWithMargins = True
       Caption = 'Whois'
       OnShow = TabSheet1Show
-      ExplicitWidth = 621
-      ExplicitHeight = 303
       object Edit1: TEdit
         Left = 96
         Top = 3
@@ -3205,14 +3201,14 @@ object Form1: TForm1
         ReadOnly = True
         TabOrder = 2
         Zoom = 100
-        ExplicitWidth = 621
-        ExplicitHeight = 271
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Get IP'
       ImageIndex = 1
       OnShow = TabSheet2Show
+      ExplicitLeft = 0
+      ExplicitTop = 0
       ExplicitWidth = 627
       ExplicitHeight = 308
       object Edit2: TEdit
@@ -3241,9 +3237,6 @@ object Form1: TForm1
     Height = 19
     Panels = <>
     SimplePanel = True
-    ExplicitLeft = 328
-    ExplicitTop = 176
-    ExplicitWidth = 0
   end
   object IdHTTP1: TIdHTTP
     AllowCookies = True
